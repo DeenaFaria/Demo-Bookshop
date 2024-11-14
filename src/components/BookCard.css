@@ -1,0 +1,59 @@
+/* BookCard.css */
+.book-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .book-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .book-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Adjust this to your preferred max height */
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .book-title {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .book-author {
+    color: #777;
+    font-size: 0.9rem;
+  }
+  
+  .book-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0.5rem 0;
+  }
+  
+  .book-rating {
+    color: #ffaa00;
+    font-size: 0.9rem;
+  }
+  
+  .add-to-cart-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #218838;
+  }
+  

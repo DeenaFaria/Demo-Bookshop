@@ -1,0 +1,99 @@
+/* src/components/About.css */
+
+.about-section {
+    padding: 20px;
+    z-index: 2; /* Ensure about-section is above the background */
+  }
+  
+  .about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    z-index: 3;
+  }
+  
+  .about-section p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    z-index: 3;
+  }
+  
+  .quotes-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Quote card styling */
+.quote-card {
+    position: absolute;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 1s forwards;
+    z-index: 2;  /* Ensure the quotes are above the background */
+  }
+  
+  /* Keyframe for fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Positioning quotes */
+  .quotes-container .quote-card:nth-child(odd) {
+    top: 10%;
+    left: 10%;
+    transform: rotate(-5deg);
+    animation-delay: 2s; /* No delay for the first one */
+  }
+  
+  .quotes-container .quote-card:nth-child(even) {
+    bottom: 10%;
+    right: 10%;
+    transform: rotate(5deg);
+    animation-delay: 5s; /* Delay for the second one */
+  }
+  
+  .quotes-container .quote-card:nth-child(3) {
+    top: 20%;
+    right: 20%;
+    transform: rotate(3deg);
+    animation-delay: 8s; /* Delay for the third one */
+  }
+  
+  .quotes-container .quote-card:nth-child(4) {
+    bottom: 20%;
+    left: 20%;
+    transform: rotate(-3deg);
+    animation-delay: 11s; /* Delay for the fourth one */
+  }
+  
+  .quotes-container .quote-card:nth-child(5) {
+    top: 30%;
+    left: 15%;
+    transform: rotate(-7deg);
+    animation-delay: 15s; /* Delay for the fifth one */
+  }
+  
+  .quotes-container .quote-card:nth-child(6) {
+    bottom: 30%;
+    right: 15%;
+    transform: rotate(7deg);
+    animation-delay: 10s; /* Delay for the sixth one */
+  }
+  
+  /* Hover effect for quotes */
+  .quotes-container .quote-card:hover {
+    transform: translateY(-10px) rotate(0deg);
+  }

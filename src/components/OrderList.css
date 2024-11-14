@@ -1,0 +1,31 @@
+/* src/components/OrderList.css */
+
+.order-list {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .order-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .order-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* src/components/StarRating.css */
+  
+  .star-rating {
+    display: inline-flex;
+  }
+  
+  .star-rating span {
+    font-size: 24px;
+    transition: color 0.2s;
+  }
+  
