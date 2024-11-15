@@ -1,15 +1,15 @@
+// src/components/Cart.js
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import './Cart.css';
 
-const Cart = () => {
-  const { cart, removeFromCart, clearCart } = useContext(CartContext);  // Use clearCart from CartContext
+const Cart = ({ onPlaceOrder }) => { // Receive the onPlaceOrder prop here
+  const { cart, removeFromCart } = useContext(CartContext);
 
   const totalPrice = cart.reduce((acc, book) => acc + book.price, 0);
 
-  const handleCheckout = () => {
-    alert(`Thank you for your purchase! Your total is $${totalPrice.toFixed(2)}.`);
-    clearCart();  // Clears the cart after checkout
+  const handlePlaceOrder = () => {
+    onPlaceOrder(cart); // Pass cart items to the parent (HomePage)
   };
 
   return (
@@ -22,8 +22,8 @@ const Cart = () => {
           <button onClick={() => removeFromCart(book.id)}>Remove</button>
         </div>
       ))}
-      <h3>Total: ${totalPrice.toFixed(2)}</h3>
-      <button onClick={handleCheckout}>Checkout</button>
+      <h3>Total: ${totalPrice}</h3>
+      <button onClick={handlePlaceOrder}>Place Order</button> {/* Trigger place order */}
     </div>
   );
 };
