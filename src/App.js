@@ -9,11 +9,12 @@ import Cart from './components/Cart';
 import Quote from './components/Quote';
 import CheckoutPage from './pages/CheckoutPage';
 import OrdersPage from './pages/OrdersPage';
+import { OrderProvider } from './context/OrderContext'; 
 
 function App() {
   return (
-   
-      <CartProvider>
+    <CartProvider>
+      <OrderProvider>
         <Router>
           <NavBar />
           <Routes>
@@ -22,11 +23,11 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/quote" element={<Quote />} />
-            <Route path="/order" element={<OrdersPage />} />
+            <Route path="/order" element={<OrdersPage />} /> {/* No need to pass orders as a prop */}
           </Routes>
         </Router>
-      </CartProvider>
-  
+      </OrderProvider>
+    </CartProvider>
   );
 }
 

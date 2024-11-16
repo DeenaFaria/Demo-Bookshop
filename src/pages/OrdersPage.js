@@ -1,13 +1,34 @@
 // src/pages/OrdersPage.js
+import React, { useContext } from 'react';
+import { OrderContext } from '../context/OrderContext';
 
-import React from 'react';
-import OrderList from '../components/OrderList';
+const OrdersPage = () => {
+  const { orders } = useContext(OrderContext); // Get orders from context
 
-const OrdersPage = ({ orders }) => (
-  <div className="orders-page">
-    <h2>Your Orders</h2>
-    <OrderList orders={orders} />
-  </div>
-);
+  return (
+    <div>
+      <h1>Your Orders</h1>
+      {orders.length === 0 ? (
+        <p>No orders yet!</p>
+      ) : (
+        <ul>
+          {orders.map((order) => (
+            <li key={order.id}>
+              <h3>Order #{order.id}</h3>
+              <p>Status: {order.status}</p>
+              <ul>
+                {order.items.map((item, index) => (
+                  <li key={index}>
+                    {item.title} - ${item.price}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
 
 export default OrdersPage;
